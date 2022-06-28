@@ -60,13 +60,6 @@ public class LoadBalancerComparison {
     public static void main(String[] args) {
         Log.printLine();
         Log.printLine("===================================== Load Balancer ==================================");
-        Log.printLine("Title:        LoadBalancer" +
-                "\nDescription:  A simulation to identify different approaches in Load Balancing of Cloud Computing" +
-                "\nAuthors:      Ajinkya Dandvate" +
-                "\n              Ajinkya Taranekar" +
-                "\n              Chirayu Mehta" +
-                "\n              Malay Saxena" +
-                "\n              Murtaza Ali");
         try {
             Calendar calendar = Calendar.getInstance();
 
@@ -283,7 +276,12 @@ public class LoadBalancerComparison {
         // 6. Finally, we need to create a PowerDatacenter String.
         Datacenter datacenter = null;
         try {
-            datacenter = new Datacenter(name, characteristics, new VmAllocationPolicySimple(hostList), storageList, 0);
+            datacenter = new Datacenter(name,
+                    characteristics,
+                    new VmAllocationPolicySimple(hostList),
+                    storageList,
+                    0
+            );
         } catch (Exception e) {
             e.printStackTrace();
         }

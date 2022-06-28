@@ -16,13 +16,10 @@ public class FCFSDatacenterBroker extends DatacenterBroker {
 
     //scheduling function
     public void scheduleTaskstoVms() {
-
         ArrayList<Cloudlet> clist = new ArrayList<Cloudlet>();
-
         for (Cloudlet cloudlet : getCloudletSubmittedList()) {
             clist.add(cloudlet);
         }
-
         setCloudletReceivedList(clist);
     }
 
@@ -30,8 +27,7 @@ public class FCFSDatacenterBroker extends DatacenterBroker {
     protected void processCloudletReturn(SimEvent ev) {
         Cloudlet cloudlet = (Cloudlet) ev.getData();
         getCloudletReceivedList().add(cloudlet);
-        Log.printLine(CloudSim.clock() + ": " + getName() + ": Cloudlet " + cloudlet.getCloudletId()
-                + " received");
+        Log.printLine(CloudSim.clock() + ": " + getName() + ": Cloudlet " + cloudlet.getCloudletId() + " received");
         cloudletsSubmitted--;
         if (getCloudletList().size() == 0 && cloudletsSubmitted == 0) {
             scheduleTaskstoVms();
@@ -41,7 +37,6 @@ public class FCFSDatacenterBroker extends DatacenterBroker {
 
 
     protected void cloudletExecution(Cloudlet cloudlet) {
-
         if (getCloudletList().size() == 0 && cloudletsSubmitted == 0) { // all cloudlets executed
             Log.printLine(CloudSim.clock() + ": " + getName() + ": All Cloudlets executed. Finishing...");
             clearDatacenters();

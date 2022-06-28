@@ -81,7 +81,6 @@ public class ShortestJobFirstDatacenterBroker extends DatacenterBroker {
             distributeRequestsForNewVmsAcrossDatacenters();
         }
     }
-
     protected void distributeRequestsForNewVmsAcrossDatacenters() {
         int numberOfVmsAllocated = 0;
         int i = 0;
@@ -98,7 +97,6 @@ public class ShortestJobFirstDatacenterBroker extends DatacenterBroker {
                 numberOfVmsAllocated++;
             }
         }
-
         setVmsRequested(numberOfVmsAllocated);
         setVmsAcks(0);
     }

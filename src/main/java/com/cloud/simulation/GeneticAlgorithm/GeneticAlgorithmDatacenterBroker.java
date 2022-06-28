@@ -15,11 +15,8 @@ public class GeneticAlgorithmDatacenterBroker extends DatacenterBroker {
 
 
     public void runGeneticAlgorithm() {
-
         List<Cloudlet> sortedList = new ArrayList<>(getCloudletList());
-
         int numCloudlets = sortedList.size();
-
         for(int i=0;i<numCloudlets;i++){
             Cloudlet tmp = sortedList.get(i);
             int idx = i;
